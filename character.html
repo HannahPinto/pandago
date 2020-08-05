@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choose your character</title>
+<style>
+ body{     
+ background: url("images/background4.jpg");   
+ background-size: cover;
+ text-align: center; 
+ text-transform: capitalize;
+ color:#001f4d;
+ }
+ .container{
+  display: grid;
+  grid-template-columns:repeat(4,200px);
+  justify-content: center;
+  gap: 20px;   
+ }
+ .character{
+ background:white;
+ display:inline-grid;  
+ border: 10px solid white;
+ transition: all;
+ cursor: pointer;
+ } 
+ .character:hover{
+ border: 10px solid #F3B5FF;
+ background:#F3B5FF;   
+ }
+ .character:focus{
+ background-color:#DCCFEC;   
+ }
+ .character img{
+   align-self: end;  
+ }
+ .character p {
+align-self: end;  
+ }
+ .button{
+   border: 1px solid black;
+display: inline-block;
+width: 150px;
+height: 50px;
+color: black;
+line-height: 50px;
+background-color:rgb(245, 190, 190);
+text-decoration: none;   
+margin-top:50px;
+ }
+
+
+ img{
+max-width: 100%;    
+ }
+</style>
+</head>
+<body>
+    <h1>choose your character </h1>
+    <p>  pick your character, so you can be different animals and experience cute animals eating apples!  </p>   
+   <div class="container">
+     <div class="character">
+        <img src="images/cutepanda.gif" alt="">   
+        <p>
+         panda   
+        </p>
+     </div> 
+     <div class="character">
+        <img src="images/cutedog.gif" alt="">   
+        <p>
+         corgi  
+        </p>
+     </div> 
+     <div class="character">
+        <img src="images/cutecat.gif" alt="">   
+        <p>
+        pusheen  
+        </p>
+     </div> 
+     <div class="character">
+        <img src="images/cutebear.gif" alt="">   
+        <p>
+         bear   
+        </p>
+     </div>  
+   </div>
+<div>
+</div>
+<a href="http://localhost/hannahweb/pandago/" class="button">Start game</a>
+</body>
+</html>
