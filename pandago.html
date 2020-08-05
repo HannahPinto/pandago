@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandago</title>
+    <style>
+     #panda{
+        width: 60px;
+        height: 74px;
+        position:absolute;
+        z-index: 1;  
+     }
+     img{
+      max-width: 100%;   
+     } 
+     .apples{
+     width: 40px;
+     height: 40px;
+     position: absolute;
+     transition: 0.2s;   
+     }
+     body, html {
+  height: 100%;
+  margin: 0;   
+    background-image: url(images/background3.webp);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+     
+    </style>
+</head>
+<body>
+   <div id="panda">
+      <img src="images/Pandita.gif" alt="charecter">   
+     </div>
+     
+<div class="apples" id="apple1">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+  <div class="apples" id="apple2">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+  <div class="apples" id="apple3">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+  <div class="apples" id="apple4">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+  <div class="apples" id="apple5">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+   <script>
+     var apples=[
+      {id:"apple1",  top: 70, left: 210},
+      {id:"apple2",  top: 80, left: 270},
+      {id:"apple3",  top: 90, left: 320},
+      {id:"apple4",  top: 100, left: 390},
+      {id:"apple5",  top: 200, left: 470}   
+     ]  
+
+     for(i=0;i<apples.length;i++){
+        console.log(apples[i].id );
+        
+       document.getElementById(apples[i].id).style.marginTop = apples[i].top +"px"
+       document.getElementById(apples[i].id).style.left = apples[i].left+"px" 
+     } 
+
+     function pandaMove(e) {
+         var positionLeft = document.getElementById("panda").offsetLeft
+         var positionTop = document.getElementById("panda").offsetTop
+         e = e || window.event;
+
+         if(e.keyCode =="38"){
+            //up arrow
+         document.getElementById("panda"). style.marginTop = (positionTop-64)+"px"
+         } 
+         else if(e.keyCode =="40"){
+            //down arrow
+            document.getElementById("panda"). style.marginTop = (positionTop+64)+"px"  
+         }
+         else if(e.keyCode =="37"){
+            //left arow
+            console.log("MEOW DADDY MEOW PANTS");
+            
+            document.getElementById("panda"). style.marginLeft = (positionLeft-64)+"px"
+         }  
+         else if(e.keyCode =="39"){
+            //right arrow
+            console.log("I PRESS THE RIGHT ARROW MEOWW");
+            
+            document.getElementById("panda"). style.marginLeft = (positionLeft+64)+"px" 
+         } 
+         var pandaTop= document.getElementById("panda").style.marginTop.replace("px","")
+         var pandaLeft= document.getElementById("panda").style.marginLeft.replace("px","")
+         console.log("pandaTop",pandaTop);
+         console.log("pandaLeft",pandaLeft);
+         for (let index = 0; index < apples.length; index++) {
+            const appleTop= apples[index].top
+            const appleLeft= apples[index].left
+            if (pandaTop >=(appleTop-30) && pandaTop<=(appleTop+30)) {
+               if (pandaLeft >=(appleLeft-30) && pandaLeft<=(appleLeft+30)) {
+                  document.getElementById(apples[index].id).style.display="none"   
+                  }  
+            }
+         }
+     }
+
+     document.onkeydown=pandaMove
+   </script>
+</body>
+</html>
