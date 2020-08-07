@@ -1,170 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="description" content="a fun gacha blog and about me website">  
-   <meta name="author" content="Hannah Pinto">
-   <link rel="image_src" href="https://www.hannahpinto.co.uk/images/me-coding.jpg" />
- 
-   <meta property="fb:app_id"             content="1619961514983513" />
-   <meta property="og:url"                content="https://www.hannahpinto.co.uk/" />
-   <meta property="og:type"               content="website" />
-   <meta property="og:title"              content="Hannah Pinto" />
-   <meta property="og:description"        content="A fun gacha blog and about me website" />
-   <meta property="og:image"              content="https://www.hannahpinto.co.uk/images/me-coding.jpg" /
-   <meta charset="UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="icon" type="image/png" href="../images/HannahFavicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="../css/styles.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pandago</title>
-    <style>
-     #panda{
-        width: 60px;
-        height: 74px;
-        position:absolute;
-        z-index: 1;  
-     }
-     img{
-      max-width: 100%;   
-     } 
-     .apples{
-     width: 40px;
-     height: 40px;
-     position: absolute;
-     transition: 0.2s;   
-     }
-     body, html {
-  height: 100%;
-  margin: 0;   
-    background-image: url(images/background3.webp);
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-}
-   
-    </style>
-</head>
-<body>
-   <!-- <header>
-      <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="../index.html"><img src="../images/HannahIcon.png">Hannah Pinto</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about-me.html">about me</a></li>
-                <li><a href="../blog.html">blog</a></li>
-                <li><a href="../youtube.html">youtube</a></li>
-                <li><a href="../gacha.html">gacha</a></li>
-                <li><a href="../me-code.html">code <></a></li>
-                <li class="active"><a href="../gamePage.html">Game!</a></li>
-                <li><a href="../contact.html">contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-  </header> -->
-
-   <div id="panda">
-      <img src="images/Pandita.gif" alt="charecter">   
-     </div>
-     
-<div class="apples" id="apple1">
-   <img src="images/apple.png" alt="apple">    
-  </div>
-  <div class="apples" id="apple2">
-   <img src="images/apple.png" alt="apple">    
-  </div>
-  <div class="apples" id="apple3">
-   <img src="images/apple.png" alt="apple">    
-  </div>
-  <div class="apples" id="apple4">
-   <img src="images/apple.png" alt="apple">    
-  </div>
-  <div class="apples" id="apple5">
-   <img src="images/apple.png" alt="apple">    
-  </div>
-   <script>
-     var apples=[
-      {id:"apple1",  top: 70, left: 210},
-      {id:"apple2",  top: 80, left: 270},
-      {id:"apple3",  top: 90, left: 320},
-      {id:"apple4",  top: 100, left: 390},
-      {id:"apple5",  top: 200, left: 470}   
-     ]  
-
-     for(i=0;i<apples.length;i++){
-        console.log(apples[i].id );
-        
-       document.getElementById(apples[i].id).style.marginTop = apples[i].top +"px"
-       document.getElementById(apples[i].id).style.left = apples[i].left+"px" 
-     } 
-
-     function pandaMove(e) {
-         var positionLeft = document.getElementById("panda").offsetLeft
-         var positionTop = document.getElementById("panda").offsetTop
-         e = e || window.event;
-
-         if(e.keyCode =="38"){
-            //up arrow
-         document.getElementById("panda"). style.marginTop = (positionTop-64)+"px"
-         } 
-         else if(e.keyCode =="40"){
-            //down arrow
-            document.getElementById("panda"). style.marginTop = (positionTop+64)+"px"  
-         }
-         else if(e.keyCode =="37"){
-            //left arow
-            console.log("MEOW DADDY MEOW PANTS");
-            
-            document.getElementById("panda"). style.marginLeft = (positionLeft-64)+"px"
-         }  
-         else if(e.keyCode =="39"){
-            //right arrow
-            console.log("I PRESS THE RIGHT ARROW MEOWW");
-            
-            document.getElementById("panda"). style.marginLeft = (positionLeft+64)+"px" 
-         } 
-         var pandaTop= document.getElementById("panda").style.marginTop.replace("px","")
-         var pandaLeft= document.getElementById("panda").style.marginLeft.replace("px","")
-         console.log("pandaTop",pandaTop);
-         console.log("pandaLeft",pandaLeft);
-         for (let index = 0; index < apples.length; index++) {
-            const appleTop= apples[index].top
-            const appleLeft= apples[index].left
-            if (pandaTop >=(appleTop-30) && pandaTop<=(appleTop+30)) {
-               if (pandaLeft >=(appleLeft-30) && pandaLeft<=(appleLeft+30)) {
-                  document.getElementById(apples[index].id).style.display="none"   
-                  }  
-            }
-         }
-     }
-
-     document.onkeydown=pandaMove
-   </script>
-   <footer>
-      <div>
-          Copyright © 2020. Hannah Pinto, All rights reserved.
-      </div>
-      <div>
-          Developed and designed by Hannah Pinto 
-      </div>
-    </footer>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="description" content="a fun gacha blog and about me website">  
+   <meta name="author" content="Hannah Pinto">
+   <link rel="image_src" href="https://www.hannahpinto.co.uk/images/me-coding.jpg" />
+ 
+   <meta property="fb:app_id"             content="1619961514983513" />
+   <meta property="og:url"                content="https://www.hannahpinto.co.uk/" />
+   <meta property="og:type"               content="website" />
+   <meta property="og:title"              content="Hannah Pinto" />
+   <meta property="og:description"        content="A fun gacha blog and about me website" />
+   <meta property="og:image"              content="https://www.hannahpinto.co.uk/images/me-coding.jpg" /
+   <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="../images/HannahFavicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="../css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandago</title>
+    <style>
+     #panda{
+        width: 60px;
+        height: 74px;
+        position:absolute;
+        z-index: 1;  
+     }
+     img{
+      max-width: 100%;   
+     } 
+     .apples{
+     width: 40px;
+     height: 40px;
+     position: absolute;
+     transition: 0.2s;   
+     }
+     body, html {
+  height: 100%;
+  margin: 0;   
+    background-image: url(images/background3.webp);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.navbar {
+   position: absolute;
+   width: 100%;
+}
+   
+    </style>
+</head>
+<body>
+   <header>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html"><img src="../images/HannahIcon.png">Hannah Pinto</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about-me.html">about me</a></li>
+                <li><a href="../blog.html">blog</a></li>
+                <li><a href="../youtube.html">youtube</a></li>
+                <li><a href="../gacha.html">gacha</a></li>
+                <li><a href="../me-code.html">code <></a></li>
+                <li class="active"><a href="../gamePage.html">Game!</a></li>
+                <li><a href="../contact.html">contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+  </header>
+
+   <div id="panda" style="margin-top: 100px;">
+      <img src="images/Pandita.gif" alt="charecter">   
+     </div>
+     
+<div class="apples" id="apple1">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+  <div class="apples" id="apple2">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+  <div class="apples" id="apple3">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+  <div class="apples" id="apple4">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+  <div class="apples" id="apple5">
+   <img src="images/apple.png" alt="apple">    
+  </div>
+   <script>
+     var apples=[
+      {id:"apple1",  top: 70, left: 210},
+      {id:"apple2",  top: 80, left: 270},
+      {id:"apple3",  top: 90, left: 320},
+      {id:"apple4",  top: 100, left: 390},
+      {id:"apple5",  top: 200, left: 470}   
+     ]
+
+     var num_apples = apples.length;
+     console.log('num_apples',num_apples);
+
+     for(i=0;i<apples.length;i++){
+        console.log(apples[i].id );
+        
+       document.getElementById(apples[i].id).style.marginTop = apples[i].top +"px"
+       document.getElementById(apples[i].id).style.left = apples[i].left+"px" 
+     } 
+
+     function pandaMove(e) {
+         var positionLeft = document.getElementById("panda").offsetLeft
+         var positionTop = document.getElementById("panda").offsetTop
+         e = e || window.event;
+
+         if(e.keyCode =="38"){
+            //up arrow
+         document.getElementById("panda"). style.marginTop = (positionTop-64)+"px"
+         } 
+         else if(e.keyCode =="40"){
+            //down arrow
+            document.getElementById("panda"). style.marginTop = (positionTop+64)+"px"  
+         }
+         else if(e.keyCode =="37"){
+            //left arow
+            
+            document.getElementById("panda"). style.marginLeft = (positionLeft-64)+"px"
+         }  
+         else if(e.keyCode =="39"){
+            //right arrow
+            //console.log("I PRESS THE RIGHT ARROW MEOWW");
+            
+            document.getElementById("panda"). style.marginLeft = (positionLeft+64)+"px" 
+         } 
+         var pandaTop= document.getElementById("panda").style.marginTop.replace("px","")
+         var pandaLeft= document.getElementById("panda").style.marginLeft.replace("px","")
+         console.log("pandaTop",pandaTop);
+         console.log("pandaLeft",pandaLeft);
+         for (let index = 0; index < apples.length; index++) {
+            const appleTop= apples[index].top
+            const appleLeft= apples[index].left
+            if (pandaTop >=(appleTop-30) && pandaTop<=(appleTop+30)) {
+               if (pandaLeft >=(appleLeft-30) && pandaLeft<=(appleLeft+30)) {
+                  document.getElementById(apples[index].id).style.display="none" 
+                  num_apples--
+                  console.log('meowww',num_apples);
+                  if (num_apples==0) {
+                     swal('Pandago Says','You saved pandago! 👏', 'success')                     
+                  }
+               }
+            }
+         }
+     }
+
+     document.onkeydown=pandaMove
+   </script>
+   <footer>
+      <div>
+          Copyright © 2020. Hannah Pinto, All rights reserved.
+      </div>
+      <div>
+          Developed and designed by Hannah Pinto 
+      </div>
+    </footer>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
